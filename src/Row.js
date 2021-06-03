@@ -32,14 +32,14 @@ function Row({ title, fetchUrl, isLargeRow }) {
 
   const handleClick = (movie) => {
     if (trailerUrl) {
-      settrailerUrl("");
+      settrailerUrl('');
     } else {
       movieTrailer(movie?.name || "")
       .then((url) => {
-        const urlParams = URLSearchParams(new URL(url).search);
-        settrailerUrl(urlParams.get('v'));
+        const urlParams = new URLSearchParams(new URL(url).search);
+        settrailerUrl(urlParams.get("v"));
       })
-      .catch((error) => console.log(error));
+      .catch((error) => console.log("this is " + error));
     }
   };
 
