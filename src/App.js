@@ -3,10 +3,15 @@ import './App.css';
 import Row from './Row';
 import Banner from './Banner';
 import requests from './requests';
-import Nav from './Nav'
-
+import Nav from './Nav';
+import ReactGA from 'react-ga';
 
 function App() {
+
+  const trackingId = "UA-184132635-1";
+  ReactGA.initialize(trackingId);
+  ReactGA.pageview(window.location.pathname + window.location.search);
+
   return (
     <div className="app">
       <Nav />
